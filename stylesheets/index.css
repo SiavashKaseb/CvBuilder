@@ -1,0 +1,270 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: fnt;
+}
+
+@font-face {
+    font-family: "fnt";
+    src: url("../fonts/Comfortaa-SemiBold.ttf");
+}
+
+body {
+    height: 300vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navbar {
+    position: absolute;
+    top: -2vh;
+    /* left: -110vh; */
+    left: -170vh;
+    height: 90vh;
+    width: 90%;
+    background-color: #fecb90;
+    background: linear-gradient(to right, white, #fecb90);
+    transform: rotate(-50deg);
+    box-shadow: 5px 10px rgba(139, 137, 137, 0.5);
+    transition: 1s;
+}
+
+#icons a {
+    text-decoration: none;
+    color: black;
+}
+.menu-icon {
+    position: absolute;
+    top: 3vh;
+    left: 2vh;
+    width: 4vh;
+    z-index: 2;
+}
+
+body>ul {
+    opacity: 0;
+    position: absolute;
+    left: 10vh;
+    top: 10vh;
+    font-size: 1.5em;
+    list-style-type: none;
+    transition: 1.2s;
+}
+
+body>ul li {
+    margin-top: 10vh;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+body>ul li:hover {
+    font-size: 1.7em;
+    text-shadow: 6px 6px 2px rgba(150, 150, 150, 0.5);
+}
+
+body>ul:nth-child(1) {
+    transition: 1.2s;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: 2s;
+}
+
+.slider {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slides {
+    height: 100%;
+    width: 200%;
+    display: flex;
+}
+
+.slide>img {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 50%;
+}
+
+.navigation-manual {
+    position: relative;
+    width: 2.5vw;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.manual-btn {
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 1vw;
+    cursor: pointer;
+    transition: 0.5s;
+    display: inline-block;
+    height: 1vw;
+    width: 1vw;
+    position: relative;
+    bottom: 2vw;
+}
+
+.manual-btn:hover {
+    background-color: rgb(225, 217, 134);
+}
+
+#radio1:checked~.first {
+    margin-left: 0;
+    transition: 2s;
+}
+
+#radio2:checked~.first {
+    margin-left: -50%;
+    transition: 2s;
+}
+
+.about {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(to bottom right, #b384ed 5%, white, #85d59d);
+}
+
+.about-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10%;
+    font-size: 1em;
+}
+
+.about>img:nth-child(1) {
+    position: absolute;
+    right: 25vw;
+    top: 8vw;
+    width: 15vw;
+}
+
+.about>img:nth-child(2) {
+    position: absolute;
+    right: 33vw;
+    top: 30vw;
+    width: 10vw;
+}
+
+.about>img:nth-child(3) {
+    position: absolute;
+    left: 3vw;
+    top: 1vw;
+    width: 15vw;
+}
+
+.about-text {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 3vw;
+    width: 45%;
+    height: 60%;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.about-text>img {
+    width: 60%;
+    margin-bottom: 5%;
+    transform: translateZ(30px);
+}
+
+.about-text>span {
+    background: -webkit-linear-gradient(#49ce71, #9e5feb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateZ(50px);
+}
+
+.footer {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/footer-bc.png");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box img {
+    height: 70vh;
+    border-radius: 2%;
+}
+
+.glide__slide {
+    filter: blur(5px);
+    opacity: 0.6;
+    transition: 0.2s linear;
+}
+
+.glide__slide--active {
+    opacity: 1;
+    filter: none;
+    transform: scale(1.1);
+}
+
+.glide__slides {
+    overflow: visible;
+}
+
+::-moz-selection {
+    background: linear-gradient(purple, rgb(209, 27, 97), orange);
+}
+
+ ::selection {
+    background: linear-gradient(purple, rgb(209, 27, 97), orange);
+}
+
+@media (max-width: 900px) {
+    .slide.first>img {
+        content: url("../images/slide12.png");
+    }
+    .slide.second>img {
+        content: url("../images/slide22.png");
+    }
+}
+
+@media (max-width: 650px) {
+    .slide.first>img {
+        content: url("../images/slide13.png");
+    }
+    .slide.second>img {
+        content: url("../images/slide23.png");
+    }
+    .manual-btn {
+        border-radius: 2vw;
+        bottom: 5vw;
+    }
+}
+
+@media (max-width: 300px) {
+    .manual-btn {
+        border-radius: 3vw;
+        bottom: 8vw;
+    }
+}

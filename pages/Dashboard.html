@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/Dashboard.css">
+    <title>Dashboard</title>
+    <link rel="icon" href="../images/logo.png">
+</head>
+<body id="bod" onload="SetTime()">
+
+    <div id="allDasboard" class="allDasboard">
+        <div class="icons-link">
+            <a  class="icons " href="./index.html">
+                <img src="../icons/home-alt.svg" alt="">
+            </a>
+            <a class="icons" href="#">
+                <img src="../icons/person.svg" alt="">
+            </a>
+            <a class="icons" href="#">
+               <img width="30px" src="../icons/instagram.svg" alt="">
+            </a>
+            <a class="icons" href="#">
+                <img width="30px" src="../icons/linkedin.svg" alt="">
+            </a>
+            <a id="dark" onclick="toggle_light_mode()" class="icons darkMode" href="#">
+                <img id="eys" width="30px" src="../icons/eye.svg" alt="">
+            </a>
+
+
+        </div>
+        <div id="glass" class="glass">
+            <h1 class="headText">Dashboard</h1>
+            <div class="box-link">
+                <a class="Box-icnos" href="#">
+                    <div class="Box-icnos1">
+                        <img src="../icons/edit.svg" alt="">
+                        <p>you can make new CV</p>
+                    </div>
+                </a>
+                <a class="Box-icnos" href="#">
+                    <div class="Box-icnos1">
+                        <img src="../icons/book-opened.svg" alt="">
+                        <p>you can see all CV</p>
+                    </div>
+                </a>
+                <div id="time" data-tilt data-tilt-max="50" data-tilt-speed="400" data-tilt-perspective="500">
+
+                </div>
+            </div>
+            <div class="aboutProgrammer">
+                <p class="text-about">My Name :</p>
+                <p class="text-about">About Me :</p>
+                <p class="text-about">My skils :</p>
+            </div>
+        
+            <h1 class="headText">You can find a new friend</h1>
+            <div>
+                <div class="boxfind">
+                    <img class="prof" src="../img/fakeProf/fakeProf1.jpeg" alt="fakeProf" width="50px" height="50px">
+                    <p class="textFD">jone</p>
+                    <p class="textFD">front End Developer</p>
+                    <a href="#" class="linkFD">See</a>
+                </div>
+            
+                <div class="boxfind">
+                    <img class="prof" src="../img/fakeProf/fakeprof2.jpeg" alt="fakeProf" width="50px" height="50px">
+                    <p class="textFD">Carol</p>
+                    <p class="textFD">Back End Developer</p>
+                    <a href="#" class="linkFD">See</a>
+                </div>
+            
+                <div class="boxfind">
+                    <img class="prof" src="../img/fakeProf/fakeprof3.jpeg" alt="fakeProf" width="50px" height="50px">
+                    <p class="textFD">Stella</p>
+                    <p class="textFD">Full stack Developer</p>
+                    <a href="#" class="linkFD">See</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/vanilla-tilt.js"></script>
+    <script src="../scripts/Dashboard.js"></script>
+</body>
+</html>

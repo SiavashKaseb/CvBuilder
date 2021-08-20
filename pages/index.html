@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumesy</title>
+    <link rel="stylesheet" href="../stylesheets/index.css">
+    <link rel="stylesheet" href="../stylesheets/glide.core.min.css">
+    <link rel="stylesheet" href="../stylesheets/glide.theme.min.css">
+    <link rel="icon" href="../images/logo.png">
+</head>
+
+<body>
+    <img  class="menu-icon" src="../images/menu-icon.png" alt="menu" id="menu-icon">
+    <div class="navbar" id="navbar">
+    </div>
+    <ul id="icons">
+        <a href="../pages/register.html"><li>Sign up</li></a>
+        <a href="../pages/register.html"><li>Log in</li></a>
+        <a href="../pages/Dashboard.html"><li>All resumes</li></a>
+    </ul>
+    
+    <nav class="navigation-menue"></nav>
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <div class="slide first">
+                <img src="../images/slide1.png" alt="background">
+            </div>
+            <div class="slide second">
+                <img src="../images/slide2.png" alt="background">
+            </div>
+        </div>
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+        </div>
+    </div>
+    <div class="about">
+        <img src="../images/img1.png" alt="pic" id="img1">
+        <img src="../images/img2.png" alt="pic" id="img2">
+        <div class="about-text" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
+            <img src="../images/logo.png" alt="">
+            <span>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, expedita. Quisquam, laudantium? Deleniti doloribus sequi exercitationem incidunt vel cumque, quod esse repellendus aspernatur, autem ea blanditiis
+            facilis, error nostrum explicabo.
+        </span>
+        </div>
+        <img src="../images/about-pic (2).png" alt="pic">
+    </div>
+    <div class="footer">
+        <div class="glide">
+            <div data-glide-el="track" class="glide__track">
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <div class="box">
+                            <img src="../images/comment1.png" alt="comment">
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="box">
+                            <img src="../images/comment2.png" alt="comment">
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="box">
+                            <img src="../images/comment3.png" alt="comment">
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="box">
+                            <img src="../images/comment4.png" alt="comment">
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="box">
+                            <img src="../images/comment5.png" alt="comment">
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="box">
+                            <img src="../images/comment6.png" alt="comment">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                    <i class="fa fa-arrow-left"><</i>
+                </button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                    <i class="fa fa-arrow-right">></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <script src="../scripts/index.js"></script>
+    <script type="text/javascript" src="../scripts/vanilla-tilt.js"></script>
+    <script src="../scripts/glide.min.js"></script>
+    <script>
+        new Glide(".glide", {
+            type: 'carouse1',
+            perView: 3,
+            focusAt: 'center',
+            gap: 20,
+            breakpoints: {
+                1200: {
+                    perView: 3,
+                },
+                800: {
+                    perView: 2,
+                }
+            }
+        }).mount()
+    </script>
+
+</body>
+
+</html>

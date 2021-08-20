@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/register.css">
+    <title>Resumesy</title>
+    <link rel="icon" href="../images/logo.png">
+</head>
+
+    <!-- <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+    </label>
+    <em>Enable Dark Mode!</em>
+    </div> -->
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form  id="testForm" action="#">
+                <h1>Creat Account</h1>
+                <div class="social-container">
+                    <a  href="https://zil.ink/tixtest" target="_blank" class="social">
+                        <img src="../img/zilink.jpeg" alt="zilink" width="40px" height="40px">
+                    </a>
+                </div>
+                <span>Or use your email for registration</span>
+                <input id="upName" type="text" placeholder="Name" >
+                <input id="upEmail" type="email" placeholder="Email">
+                <input id="upPassword" type="password" placeholder="Password">
+                <button onclick="data()" class="moveUp">sign Up</button>
+            </form>
+        </div>
+    
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a  href="https://zil.ink/tixtest" target="_blank" class="social">
+                        <img src="../img/zilink.jpeg" alt="zilink" width="40px" height="40px">
+                    </a>
+                </div>
+                <span>Or use your account</span>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <a href="#">Frogot Your password ?</a>
+                <button class="moveUp">sign In </button>
+            </form>
+        </div>
+    
+    
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panle overlay-left">
+       
+                    <h1>Hello , frined!</h1>
+                    <p>Enter your personal detalis to create a account</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div  class="overlay-panle overlay-right">
+                    <h1 id="welcome">Welcome Back!</h1>
+                    <p>Please Sign In to your account with your personal info</p>
+                    <button class="ghost " id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="../scripts/register.js"></script>
+
+    <script>
+        gsap.from("#welcome", {duration: 2, x: 0, opacity: 0, scale: 0.2});
+
+    document.querySelectorAll(".moveUp").forEach(function(box) {
+    box.addEventListener("click", function() {
+        gsap.to(".container", {
+        duration: 1.2, 
+        opacity: 0, 
+        y: -100, 
+        stagger: 0.1,
+        ease: "back.in"
+        });
+    });
+    });
+    </script>
+</body>
+</html>
