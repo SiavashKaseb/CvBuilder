@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/logo.png">
+    <title>Resumesy</title>
+    <link rel="stylesheet" href="../stylesheets/resumeBuilder.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <input type="checkbox" id="check">
+            <nav class="menu">
+                <label for="check" id="check">
+                <img src="../images/grid.svg" alt="menu">
+            </label>
+                <ul>
+                    <li id="nav-icon1"><img src="../images/home-alt.svg" alt=""></li>
+                    <li id="nav-icon2"><img src="../images/feed.svg" alt="menu"></li>
+                    <li id="nav-icon3"><img src="../images/hamburger.svg" alt=""></li>
+
+                </ul>
+        </div>
+        <img src="../images/pic-make.png" alt="" class="pic-make">
+
+        <div class="progressbar">
+            <div id="p1"></div>
+            <div id="p2"></div>
+            <div id="p3"></div>
+            <div id="p4"></div>
+        </div>
+
+
+        <span id="btn1">
+            <img src="../images/chevrons-left.svg" alt="">
+        </span>
+        <span id="btn">
+            <img src="../images/chevrons-right.svg">
+        </span>
+
+        <div class="popup" data-tilt data-tilt-glare data-tilt-max-glare="0.8" id="popup">
+            <img src="../images/cancel.svg" alt="cancel" id="cancel">
+            <p id="popup-txt">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis ducimus odio minus et! Laborum officiis ab quae, odio fugiat deleniti tenetur architecto non itaque magnam sunt cum similique deserunt facilis?</p>
+        </div>
+
+
+
+        <div class="slider">
+
+            <div class="slides">
+                <div class="slide first" id="first">
+                    <div>
+                        <label for="age">Age : </label>
+                        <input type="number" id="age" name="age" placeholder="age">
+                        <label for="city">City : </label>
+                        <input type="text" id="city" name="city" placeholder="city">
+                        <label for="phone"><span class="red">*</span> Phone number : </label>
+                        <input type="tel" id="phone" name="phone" placeholder="phone number">
+                        <label for="about" class="next-col">About me : </label>
+                        <textarea id="about" name="about" placeholder="About me" rows="8" cols="8"></textarea>
+                    </div>
+                </div>
+                <div class="slide" id="second">
+                    <div>
+                        <label for="field"><span class="red">*</span> Field of study : </label>
+                        <input type="text" id="field" name="field" placeholder="field">
+                        <label for="grade">Grade : </label>
+                        <input type="text" id="grade" name="grade" placeholder="grade">
+                        <label for="record">Summary of educational / academic records : </label>
+                        <textarea id="record" name="record" placeholder="About me" rows="3" cols="8"></textarea>
+                    </div>
+                </div>
+                <div class="slide" id="third">
+                    <div>
+                        <label for="title"><span class="red">*</span> Job title : </label>
+                        <input type="text" id="title" name="title" placeholder="job title">
+                        <label for="position">Job position : </label>
+                        <input type="text" id="position" name="position" placeholder="job position">
+                        <label for="workplace">Workplace name : </label>
+                        <input type="text" id="workplace" name="workplace" placeholder="workplace name">
+                        <label for="status" class="next-col"><span class="red">*</span> Occupational status : </label>
+                        <div>
+                            <input type="radio" id="status1" name="status" value="status1" checked="checked">   <label for="status1" class="radio-label">Unemployed</label><br>
+                        </div>
+                        <div>
+                            <input type="radio" id="status2" name="status" value="status2">   <label for="status2" class="radio-label">Job seeker</label><br>
+                        </div>
+                        <div>
+                            <input type="radio" id="status3" name="status" value="status3">   <label for="status3" class="radio-label">Employed</label><br>
+                        </div>
+                        <!-- <label for="about-job">About my job : </label>
+                        <textarea id="about-job" name="about-job" placeholder="About my job :" rows="3" cols="8"></textarea> -->
+
+
+                    </div>
+                </div>
+                <div class="slide" id="fourth">
+                    <div>
+                        <div class="skill-div">
+                            <label for="skills">Skills </label>
+                            <img src="../images/add.svg" alt="add" id="add-skill">
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="skills">
+                                    <input type="text" id="skill1" placeholder="skill 1" name="skill1">
+                                </li>
+                                <li class="skills">
+                                    <input type="text" id="skill2" placeholder="skill 2" name="skill2">
+                                </li>
+                                <li class="skills">
+                                    <input type="text" id="skill3" placeholder="skill 3" name="skill3">
+                                </li>
+                                <li class="skills">
+                                    <input type="text" id="skill4" placeholder="skill 4" name="skill4">
+                                </li>
+                                <li class="skills">
+                                    <input type="text" id="skill5" placeholder="skill 5" name="skill5">
+                                </li>
+                                <input type="button" value="submit" id="submit" name="submit">
+                            </ul>
+                        </div>
+                        <!-- <label for="about-projects" class="next-col">About my projects : </label>
+                        <textarea id="about-projects" name="about-projects" placeholder="About my projects " rows="8" cols="8"></textarea> -->
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <span class="text" id="text">
+                Personal
+            </span>
+
+
+
+    </div>
+    <script type="text/javascript" src="../scripts/vanilla-tilt.js"></script>
+    <script src="../scripts/resumeBuilder.js"></script>
+
+</body>
+
+</html>
