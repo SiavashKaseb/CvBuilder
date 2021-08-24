@@ -56,7 +56,7 @@
                 <div class="slide first" id="first">
                     <div>
                         <label for="age">Age : </label>
-                        <input type="number" id="age" name="age" placeholder="age">
+                        <input type="date" id="age" name="age" placeholder="age">
                         <label for="city">City : </label>
                         <input type="text" id="city" name="city" placeholder="city">
                         <label for="phone"><span class="red">*</span> Phone number : </label>
@@ -122,7 +122,7 @@
                                 <li class="skills">
                                     <input type="text" id="skill5" placeholder="skill 5" name="skill5">
                                 </li>
-                                <input type="button" value="submit" id="submit" name="submit">
+                                <input type="button" onclick="make()" value="submit" id="submit" name="submit">
                             </ul>
                         </div>
                         <!-- <label for="about-projects" class="next-col">About my projects : </label>
@@ -142,6 +142,7 @@
 
 
     </div>
+    <script src="../scripts/jq.js"></script>
     <script type="text/javascript" src="../scripts/vanilla-tilt.js"></script>
     <script src="../scripts/resumeBuilder.js"></script>
 

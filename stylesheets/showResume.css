@@ -1,0 +1,462 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: fnt;
+}
+
+@font-face {
+    font-family: "fnt";
+    src: url("../fonts/Comfortaa-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "bold-fnt";
+    src: url("../fonts/Comfortaa-SemiBold.ttf");
+}
+
+.container {
+    height: 101vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(163deg, rgba(89, 215, 180, 1) 35%, rgba(179, 132, 237, 1) 71%);
+}
+
+ 
+#nav-login a , #nav-home a , #nav-all a {
+text-decoration: none;
+color: white
+}
+.partition {
+    width: 25%;
+    height: 50%;
+}
+
+.container>div {
+    border: 3px solid black;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    /* Remove this if you don't want the 3D effect */
+}
+
+
+/* This container is needed to position the front and back side */
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.flip-card-back.purple {
+    background-color: #b384ed;
+}
+
+.flip-card-back.green {
+    background-color: #85d59d;
+}
+
+.flip-div {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    align-items: space-around;
+    justify-content: space-around;
+    text-align: center;
+    flex-direction: column;
+    font-size: 1.5em;
+}
+
+.flip-div>span:hover {
+    transition: 0.7s;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.menu-partition {
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-partition:hover #menu {
+    font-size: 3em;
+    transition: 1.5s;
+}
+
+.menu-partition:hover #nav-home {
+    transition: 0.5s;
+    opacity: 1;
+}
+
+.menu-partition:hover #nav-all {
+    transition: 0.5s;
+    transition-delay: 0.4s;
+    opacity: 1;
+}
+
+.menu-partition:hover #nav-login {
+    transition: 0.5s;
+    transition-delay: 0.8s;
+    opacity: 1;
+}
+
+.nav {
+    z-index: 3;
+    position: absolute;
+    width: 25%;
+    top: 0;
+    text-align: center;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.nav>div {
+    height: 33.3%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.nav>div:hover {
+    transition: 0.5s;
+    color: gray;
+}
+
+.nav>div:hover .nav-title {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.nav>div:nth-child(1),
+.nav>div:nth-child(3) {
+    background-color: #b384ed;
+}
+
+.nav>div:nth-child(2) {
+    background-color: rgba(89, 215, 180, 1);
+}
+
+.rate-partition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rate {
+    width: 80%;
+    height: 70%;
+    background: linear-gradient(163deg, rgba(89, 215, 180, 1) 35%, rgba(179, 132, 237, 1) 71%);
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px #000000cc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.rate:hover {
+    transition: 1s;
+    transform: scale(1.05);
+    font-size: 1.2em;
+}
+
+.rate>span {
+    font-weight: bold;
+}
+
+.emoji {
+    background-image: url(../images/1.png);
+    width: 35%;
+    height: 40%;
+    background-size: 100% 100%;
+}
+
+.stars {
+    width: 70%;
+    height: 15%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.star {
+    height: 100%;
+    width: 15%;
+    background-size: 100% 100%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.star:hover {
+    transform: scale(1.5);
+}
+
+.star1 {
+    background-image: url(../images/sy.png);
+}
+
+.star2,
+.star3,
+.star4,
+.star5 {
+    background-image: url(../images/sb.png);
+}
+
+.clock {
+    background: linear-gradient(163deg, rgba(89, 215, 180, 1) 35%, rgba(179, 132, 237, 1) 71%);
+    border-radius: 50%;
+    border: 5px solid currentColor;
+    box-shadow: 0px 0px 15px #000000cc;
+    height: 200px;
+    width: 200px;
+    position: relative;
+}
+
+.clock .center {
+    background: currentColor;
+    position: absolute;
+    transform-origin: 50% 100%;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    left: calc(50% - 5px);
+    top: calc(50% - 5px);
+}
+
+.clock .hour {
+    background: currentColor;
+    position: absolute;
+    transform-origin: 50% 100%;
+    border-radius: 3px;
+    height: 28%;
+    width: 6px;
+    left: calc(50% - 3px);
+    top: 22%;
+    transform: rotate(0deg);
+}
+
+.clock .minute {
+    background: currentColor;
+    position: absolute;
+    transform-origin: 50% 100%;
+    border-radius: 2px;
+    height: 40%;
+    width: 4px;
+    left: calc(50% - 2px);
+    top: 10%;
+    opacity: 0.9;
+    transform: rotate(45deg);
+}
+
+.clock .second {
+    background: currentColor;
+    position: absolute;
+    transform-origin: 50% 100%;
+    border-radius: 1px;
+    height: 40%;
+    width: 2px;
+    left: calc(50% - 1px);
+    opacity: 0.7;
+    top: 10%;
+    transform: rotate(0deg);
+}
+
+.date {
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    border: 3px solid rgb(77, 17, 77);
+    left: calc(50% + 50px);
+    top: calc(50% - 12px);
+    font-family: Calibri;
+    text-align: center;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.clock-partition {
+    align-items: center;
+    background: #b384ed;
+    color: rgb(77, 17, 77);
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: #4760f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.bar1,
+.bar2 {
+    width: 50px;
+    height: 7px;
+    background-color: #f3f3f3;
+    transform: translate(-5px, 10px) rotate(25deg);
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+}
+
+.bar2 {
+    transform: translate(-5px, -7px) rotate(-25deg);
+    position: absolute;
+    transition: all .3s ease-in-out;
+}
+
+.button div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+}
+
+.button div i {
+    font-size: 0;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+.telegram,
+.instagram,
+.whatsapp {
+    width: 20px;
+    height: 20px;
+    background-color: #f3f3f3;
+    color: #2d2d2d;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(15px, -18px);
+    transition: all .3s ease-in-out;
+}
+
+.instagram {
+    transform: translateX(-20px);
+    transition: all .3s ease-in-out;
+}
+
+.whatsapp {
+    transform: translate(15px, 18px);
+    transition: all .3s ease-in-out;
+}
+
+.telegram.exp,
+.instagram.exp,
+.whatsapp.exp {
+    transform: translate(80px, -80px);
+    width: 100px;
+    height: 100px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    transition: all .3s ease-in-out;
+}
+
+.telegram.exp:hover {
+    background-color: #0087cb;
+    transition: all .3s ease-in-out;
+}
+
+.telegram.exp:hover i,
+.instagram.exp:hover i,
+.whatsapp.exp:hover i {
+    color: #f3f3f3;
+    transition: all .3s ease-in-out;
+}
+
+.instagram.exp {
+    transform: translateX(-100px);
+    transition: all .3s ease-in-out;
+}
+
+.instagram.exp:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    transition: all .3s ease-in-out;
+}
+
+.whatsapp.exp {
+    transform: translate(80px, 80px);
+    transition: all .3s ease-in-out;
+}
+
+.whatsapp.exp:hover {
+    background-color: #4dc247;
+    transition: all .3s ease-in-out;
+}
+
+.bar1.exp,
+.bar2.exp {
+    transform: rotate(45deg);
+    width: 30px;
+    height: 5px;
+    transition: all .3s ease-in-out;
+}
+
+.bar2.exp {
+    transform: rotate(-45deg);
+    transition: all .3s ease-in-out;
+}
+
+.button.exp {
+    width: 60px;
+    height: 60px;
+    transition: all .3s ease-in-out;
+}
+
+.button div i.exp {
+    opacity: 1;
+    font-size: 60px;
+    transition: all .3s ease-in-out;
+}

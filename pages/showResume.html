@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/logo.png">
+    <title>Resumesy</title>
+    <link rel="stylesheet" href="../stylesheets/showResume.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="partition menu-partition">
+            <span id="menu">
+                Menu
+            </span>
+            <div class="nav">
+                <div id="nav-home">
+                    <a href="./index.html"><span class="nav-title">Home</span></a>
+                </div>
+                <div id="nav-all">
+                    <a href="./allResumes.html"><span class="nav-title">All resumes</span></a>
+                </div>
+                <div id="nav-login">
+                    <a href="./register.html"><span class="nav-title">Sign up / Login</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="partition">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/personal.png" alt="personal" style="width:100%;height:100%;">
+                    </div>
+                    <div class="flip-card-back purple">
+                        <div class="personal-div flip-div">
+                            <span id="age">
+                                Age : X years old
+                            </span>
+                            <span id="city">
+                                City : city
+                            </span>
+                            <span id="phone">
+                                Phone : 
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="partition">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/educational.png" alt="personal" style="width:100%;height:100%;">
+                    </div>
+                    <div class="flip-card-back green">
+                        <div class="educational-div flip-div">
+                            <span id="study-field">
+                                Field of study : 
+                            </span>
+                            <span id="grade">
+                                Grade : 
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="partition clock-partition">
+            <div class="clock">
+                <div class="hour"></div>
+                <div class="minute"></div>
+                <div class="second"></div>
+                <div class="center"></div>
+                <div class="date"></div>
+            </div>
+        </div>
+        <div class="partition share-btn">
+            <div class="button">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="telegram"><i class="fab fa-telegram-plane"></i></div>
+                <div class="instagram"><i class="fab fa-instagram"></i></div>
+                <div class="whatsapp"><i class="fab fa-whatsapp"></i></div>
+            </div>
+        </div>
+        <div class="partition">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/occupational.png" alt="personal" style="width:100%;height:100%;">
+                    </div>
+                    <div class="flip-card-back green">
+                        <div class="occupational-div flip-div">
+                            <span id="job-title">
+                                Job title : 
+                            </span>
+                            <span id="job-position">
+                                Job postition : 
+                            </span>
+                            <span id="workplace-name">
+                                Workplace name : 
+                            </span>
+                            <span id="status">
+                                Occupational status :
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="partition">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="../images/skills.png" alt="personal" style="width:100%;height:100%;">
+                    </div>
+                    <div class="flip-card-back purple">
+                        <div class="skills-div flip-div">
+                            <span id="skills">
+                                Skills :
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="partition rate-partition">
+            <div class="rate">
+                <span>Rate this user</span>
+                <div class="emoji" id="emoji"></div>
+                <div class="stars">
+                    <div class="star1 star" id="star1"></div>
+                    <div class="star2 star" id="star2"></div>
+                    <div class="star3 star" id="star3"></div>
+                    <div class="star4 star" id="star4"></div>
+                    <div class="star5 star" id="star5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/showResume.js"></script>
+</body>
+
+</html>

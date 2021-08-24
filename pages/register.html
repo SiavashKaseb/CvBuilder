@@ -26,10 +26,10 @@
                     </a>
                 </div>
                 <span>Or use your email for registration</span>
-                <input id="upName" type="text" placeholder="Name" >
-                <input id="upEmail" type="email" placeholder="Email">
-                <input id="upPassword" type="password" placeholder="Password">
-                <button onclick="data()" class="moveUp">sign Up</button>
+                <input  id="upName" type="text" placeholder="Name" >
+                <input  id="upEmail" type="email" placeholder="Email">
+                <input  id="upPassword" type="password" placeholder="Password">
+                <button id="#testClick"  class="moveUp" onclick="testbt()">sign Up</button>
             </form>
         </div>
     
@@ -42,10 +42,10 @@
                     </a>
                 </div>
                 <span>Or use your account</span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
+                <input  type="email" placeholder="Email">
+                <input  type="password" placeholder="Password">
                 <a href="#">Frogot Your password ?</a>
-                <button class="moveUp">sign In </button>
+                <button  class="moveUp" onclick="login()">sign In </button>
             </form>
         </div>
     
@@ -61,15 +61,16 @@
                 <div  class="overlay-panle overlay-right">
                     <h1 id="welcome">Welcome Back!</h1>
                     <p>Please Sign In to your account with your personal info</p>
-                    <button class="ghost " id="signUp">Sign Up</button>
+                    <button  class="ghost " id="signUp" >Sign Up</button>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="../scripts/jq.js"></script>
     <script src="../scripts/register.js"></script>
-
-    <script>
+    
+    <!-- <script>
         gsap.from("#welcome", {duration: 2, x: 0, opacity: 0, scale: 0.2});
 
     document.querySelectorAll(".moveUp").forEach(function(box) {
@@ -83,6 +84,6 @@
         });
     });
     });
-    </script>
+    </script> -->
 </body>
 </html>
