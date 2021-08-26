@@ -28,7 +28,7 @@
                 <span>Or use your email for registration</span>
                 <input  id="upName" type="text" placeholder="Name" >
                 <input  id="upEmail" type="email" placeholder="Email">
-                <input  id="upPassword" type="password" placeholder="Password">
+                <input  id="upPassword" class="passUP" type="password" placeholder="Password">
                 <button id="#testClick"  class="moveUp" onclick="testbt()">sign Up</button>
             </form>
         </div>
@@ -42,8 +42,8 @@
                     </a>
                 </div>
                 <span>Or use your account</span>
-                <input  type="email" placeholder="Email">
-                <input  type="password" placeholder="Password">
+                <input id="UserEmail"  type="email" placeholder="Email" >
+                <input id="UserPassword"  class="passIN" type="password" placeholder="Password">
                 <a href="#">Frogot Your password ?</a>
                 <button  class="moveUp" onclick="login()">sign In </button>
             </form>
@@ -70,11 +70,19 @@
     <script src="../scripts/jq.js"></script>
     <script src="../scripts/register.js"></script>
     
-    <!-- <script>
+    <script>
         gsap.from("#welcome", {duration: 2, x: 0, opacity: 0, scale: 0.2});
-
+        let inp = document.getElementById("upEmail")
+        let inpLogin = document.getElementById("UserEmail")
+        let passUP = document.getElementById("upPassword").value
+        let passIN = document.getElementById("UserPassword").value
+        
     document.querySelectorAll(".moveUp").forEach(function(box) {
     box.addEventListener("click", function() {
+        
+                
+       
+       if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inp.value )){
         gsap.to(".container", {
         duration: 1.2, 
         opacity: 0, 
@@ -82,8 +90,23 @@
         stagger: 0.1,
         ease: "back.in"
         });
+        return (true)
+       }else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inpLogin.value )){
+        gsap.to(".container", {
+        duration: 1.2, 
+        opacity: 0, 
+        y: -100, 
+        stagger: 0.1,
+        ease: "back.in"
+        });
+        return (true)
+       }
+       else{
+        alert("You have entered an invalid email address!")
+        return (false)
+       }
     });
     });
-    </script> -->
+    </script>
 </body>
 </html>

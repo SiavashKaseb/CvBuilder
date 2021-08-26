@@ -101,3 +101,54 @@ button.addEventListener("click", expand)
 function expand() {
     allElements.forEach(element => element.classList.toggle("exp"))
 }
+
+let birthday = document.getElementById("age");
+let AboutProgrammer = document.getElementById("about");
+let city = document.getElementById("city");
+let phone = document.getElementById("phone");
+
+let grade = document.getElementById("grade");
+let record = document.getElementById("record");
+let field = document.getElementById("study-field");
+
+let title = document.getElementById("job-title");
+let workplace = document.getElementById("workplace-name");
+
+
+
+$.ajax({
+    type: "GET",
+    url:`https://cors-anywhere.herokuapp.com/http://162.55.12.72:3002/${localStorage.getItem("User_Name")}`,
+    headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "X-Requested-With",
+        
+    },
+    success: function(response) {
+        console.log(response);
+
+        console.log(response.Skills)
+
+        let birthDate = new Date(response.Birthday);
+        let difference=Date.now() - birthDate.getTime(); 
+        let  ageDate = new Date(difference); 
+        let calculatedAge = Math.abs(ageDate.getUTCFullYear() - 1970);
+        
+        birthday.innerText = `Age : ${calculatedAge}`
+        // AboutProgrammer.innerText = ``
+        city.innerText = `City : ${response.City}`
+        phone.innerText = `Phone : ${response.PhoneNumber}`
+        grade.innerText = `Grade : ${response.Grade}`
+        field.innerText = `Field of study : ${response.Major}`
+        title.innerText = `Job title : ${response.Job}`
+        workplace.innerText = `Workplace name : ${response.WorkPlace}`
+
+    },
+    error: function(xhr, ajaxOptions, thrownError) {
+        alert("dobare load beshe");
+        console.log(xhr)
+        console.log(ajaxOptions)
+        console.log(thrownError)
+
+    },
+});

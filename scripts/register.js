@@ -3,11 +3,11 @@ const signInbtn = document.getElementById("signIn");
 const container = document.getElementById("container");
 
 signUpbtn.addEventListener("click", () => {
-    container.classList.add("right-panel-active");
+  container.classList.add("right-panel-active");
 });
 
 signInbtn.addEventListener("click", () => {
-    container.classList.remove("right-panel-active");
+  container.classList.remove("right-panel-active");
 });
 
 // const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
@@ -40,67 +40,90 @@ signInbtn.addEventListener("click", () => {
 
 // toggleSwitch.addEventListener('change', switchTheme, false);
 
-
-
 function testbt() {
-    console.log("here sign")
-    let Email = document.getElementById("upEmail");
-    let Fname = document.getElementById("upName");
-    let Password = document.getElementById("upPassword");
+  let Email = document.getElementById("upEmail");
+  let Fname = document.getElementById("upName");
+  let Password = document.getElementById("upPassword");
 
-    $.ajax({
-        type: "POST",
-        url: "https://cors-anywhere.herokuapp.com/http://162.55.12.72:3002/SignUp",
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "X-Requested-With",
-        },
-        data: {
-            Name: Fname.value,
-            Email: Email.value,
-            Password: Password.value,
-        },
+  console.log(Password.value);
+  if (Password.value == "") {
+    alert("Fill the password please!");
+  } else if (Password.value.lenght < 8) {
+    alert("Password length must be atleast 8 characters");
+    return false;
+  } else if (Password.value.lenght > 15) {
+    alert("Password length must not exceed 15 characters");
+  } else {
+    alert("ok");
+  }
+  $.ajax({
+    type: "POST",
+    url: "https://cors-anywhere.herokuapp.com/http://162.55.12.72:3002/SignUp",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "X-Requested-With",
+    },
+    data: {
+      Name: Fname.value,
+      Email: Email.value,
+      Password: Password.value,
+    },
 
-        success: function(response) {
-            console.log(response.token);
-            alert("Details saved successfully!!!");
-            window.localStorage.setItem("access_token", response.token);
-            window.location.replace("../pages/Dashboard.html");
-        },
-        error: function(xhr, ajaxOptions, thrownError) {
-            alert(xhr.status);
-            alert(thrownError);
-        },
-    });
+    success: function (response) {
+      console.log(response.token);
+      alert("Details saved successfully!!!");
+      window.localStorage.setItem("access_token", response.token);
+      window.location.replace("../pages/Dashboard.html");
+    },
+    error: function (xhr, ajaxOptions, thrownError) {
+      alert(xhr.status);
+      alert(thrownError);
+      alert(ajaxOptions);
+    },
+  });
+  event.preventDefault();
 }
 
 function login() {
-    console.log("here log")
-    let userName = document.getElementById("UserName");
-    let Pass = document.getElementById("UserPassword");
-    console.log(userName.value, Pass.value);
+  let userName = document.getElementById("UserEmail");
+  let Pass = document.getElementById("UserPassword");
+  console.log(userName.value, Pass.value);
 
-    $.ajax({
-        type: "POST",
-        url: "https://cors-anywhere.herokuapp.com/http://162.55.12.72:3002/Login",
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "X-Requested-With",
-        },
-        data: {
-            Username: userName.value,
-            Password: Pass.value,
-        },
+  if ((Pass.value = "")) {
+    alert("Fill the password please!");
+    return false;
+  } else if (Pass.value.lenght < 8) {
+    alert("Password length must be atleast 8 characters");
+    return false;
+  } else if (Pass.value.lenght > 15) {
+    alert("Password length must not exceed 15 characters");
+  } else {
+    alert("ok");
+  }
+  $.ajax({
+    type: "POST",
+    url: "https://cors-anywhere.herokuapp.com/http://162.55.12.72:3002/Login",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "X-Requested-With",
+    },
+    data: {
+      Username: userName.value,
+      Password: Pass.value,
+    },
 
-        success: function(response) {
-            console.log(response);
-            alert("Details saved successfully!!!");
-            window.localStorage.setItem("access_token", response.token);
-            // window.location.replace("./index2.html");
-        },
-        error: function(xhr, ajaxOptions, thrownError) {
-            alert(xhr.status);
-            alert(thrownError);
-        },
-    });
+    success: function (response) {
+      console.log(response);
+      alert("Details saved successfully!!!");
+      window.localStorage.setItem("access_token", response.token);
+
+      window.location.replace("../pages/Dashboard.html");
+    },
+    error: function (xhr, ajaxOptions, thrownError) {
+      alert(xhr.status);
+      alert(thrownError);
+      alert(ajaxOptions);
+    },
+  });
+  event.preventDefault();
 }

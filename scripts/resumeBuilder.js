@@ -202,15 +202,14 @@ function make() {
       City: city,
     },
     success: function (response) {
-      // jQuery(#usergrid").trigger("reloadGrid");
-      // clear();
       console.log(response);
-      //   text.innerText = response.Name;
-      // window.localStorage.setItem("access_token", response.token);
       window.location.replace("../pages/Dashboard.html");
     },
     error: function (xhr, ajaxOptions, thrownError) {
       alert("bug");
+      console.log(xhr)
+      console.log(ajaxOptions)
+      console.log(thrownError)
     },
   });
 }
