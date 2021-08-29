@@ -8,472 +8,43 @@
     <link rel="icon" href="../images/logo.png">
     <link rel="stylesheet" href="../stylesheets/allResumes.css">
     <link rel="stylesheet" href="../animation/aos/dist/aos.css">
+    <link rel="stylesheet" href="../animation/materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Resumesy</title>
 </head>
 
 <body>
-    <!-- <img  class="menu-icon" src="../images/menu-icon.png" alt="menu" id="menu-icon">
-    <div class="navbar" id="navbar">
-    </div>
-    <ul id="icons">
-        <a href="../pages/register.html"><li>Sign up</li></a>
-        <a href="../pages/register.html"><li>Log in</li></a>
-        <a href="../pages/Dashboard.html"><li>All resumes</li></a>
-    </ul>
-    <nav class="navigation-menue"></nav> -->
+    <nav>
+        <div class="nav-wrapper black">
+          <a href="./index.html" class="brand-logo">Resumesy</a>
+          <a href="#" onclick="zad()" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./Dashboard.html">Dashboard</a></li>
+            <li><a href="./register.html">Register</a></li>
+
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./Dashboard.html">Dashboard</a></li>
+        <li><a href="./register.html">Register</a></li>
+      </ul>
+      
     <div id="allCard" class="all">
-        <!-- <div data-aos="fade-right">
-            <div class="wrap">
-
-                <div class="card">
-                    <div class="card-liner">
-                        <figure>
-                            <img src="../img/fakeProf/fakeProf1.jpeg" alt="" />
-                        </figure>
-                        <div class="card--social">
-                            <ul>
-                                <li class="instagram">
-                                    <a href="#" class="insta"><img src="../icons/instagram.svg" alt=""></a>
-                                </li>
-                                <li class="codepen">
-                                    <a href="#"><img src="../icons/linkedin.svg" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card--title">
-                            <h3>jone spot</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <div class="card--desc">
-                            <hr />
-                            <p>“I love BR”</p>
-                        </div>
-                        <div class="card--btn">
-                            <a class="test" href="./showResume.html">
-                                
-                                See full
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div data-aos="fade-down">
-            <div class="wrap">
-
-                <div class="card">
-                    <div class="card-liner">
-                        <figure>
-                            <img src="../img/fakeProf/fakeprof2.jpeg" alt="" />
-                        </figure>
-                        <div class="card--social">
-                            <ul>
-                                <li class="instagram">
-                                    <a href="#" class="insta"><img src="../icons/instagram.svg" alt=""></a>
-                                </li>
-                                <li class="codepen">
-                                    <a href="#"><img src="../icons/linkedin.svg" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card--title">
-                            <h3>jone spot</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <div class="card--desc">
-                            <hr />
-                            <p>“I love BR”</p>
-                        </div>
-                        <div class="card--btn">
-                            <a class="test" href="./showResume.html">
-                                
-                                See full
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div data-aos="fade-left">
-            <div class="wrap">
-
-                <div class="card">
-                    <div class="card-liner">
-                        <figure>
-                            <img src="../img/fakeProf/fakeprof3.jpeg" alt="" />
-                        </figure>
-                        <div class="card--social">
-                            <ul>
-                                <li class="instagram">
-                                    <a href="#" class="insta"><img src="../icons/instagram.svg" alt=""></a>
-                                </li>
-                                <li class="codepen">
-                                    <a href="#"><img src="../icons/linkedin.svg" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card--title">
-                            <h3>jone spot</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <div class="card--desc">
-                            <hr />
-                            <p>“I love BR”</p>
-                        </div>
-                        <div class="card--btn">
-                            <a class="test" href="./showResume.html">
-                                
-                                See full
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div> -->
-
+       
     </div>
     <div class="all">
-        <!-- <div data-aos="fade-right">
-            <div class="wrap">
-
-                <div class="card">
-                    <div class="card-liner">
-                        <figure>
-                            <img src="../img/fakeProf/fakeprof3.jpeg" alt="" />
-                        </figure>
-                        <div class="card--social">
-                            <ul>
-                                <li class="instagram">
-                                    <a href="#" class="insta"><img src="../icons/instagram.svg" alt=""></a>
-                                </li>
-                                <li class="codepen">
-                                    <a href="#"><img src="../icons/linkedin.svg" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card--title">
-                            <h3>jone spot</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <div class="card--desc">
-                            <hr />
-                            <p>“I love BR”</p>
-                        </div>
-                        <div class="card--btn">
-                            <a class="test" href="./showResume.html">
-                                
-                                See full
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div data-aos="fade-down">
-            <div class="wrap">
-
-                <div class="card">
-                    <div class="card-liner">
-                        <figure>
-                            <img src="../img/fakeProf/fakeProf1.jpeg" alt="" />
-                        </figure>
-                        <div class="card--social">
-                            <ul>
-                                <li class="instagram">
-                                    <a href="#" class="insta"><img src="../icons/instagram.svg" alt=""></a>
-                                </li>
-                                <li class="codepen">
-                                    <a href="#"><img src="../icons/linkedin.svg" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card--title">
-                            <h3>jone spot</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <div class="card--desc">
-                            <hr />
-                            <p>“I love BR”</p>
-                        </div>
-                        <div class="card--btn">
-                            <a class="test" href="./showResume.html">
-                                
-                                See full
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div data-aos="fade-left">
-            <div class="wrap">
-
-                <div class="card">
-                    <div class="card-liner">
-                        <figure>
-                            <img src="../img/fakeProf/fakeProf2.jpeg" alt="" />
-                        </figure>
-                        <div class="card--social">
-                            <ul>
-                                <li class="instagram">
-                                    <a href="#" class="insta"><img src="../icons/instagram.svg" alt=""></a>
-                                </li>
-                                <li class="codepen">
-                                    <a href="#"><img src="../icons/linkedin.svg" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card--title">
-                            <h3>jone spot</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <div class="card--desc">
-                            <hr />
-                            <p>“I love BR”</p>
-                        </div>
-                        <div class="card--btn">
-                            <a class="test" href="./showResume.html">
-                                
-                                See full
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div> -->
+    
     </div>
     <div class="all">
-        <!-- <div data-aos="fade-right">
-            <div class="wrap">
-
-                <div class="card">
-                    <div class="card-liner">
-                        <figure>
-                            <img src="../img/fakeProf/fakeProf1.jpeg" alt="" />
-                        </figure>
-                        <div class="card--social">
-                            <ul>
-                                <li class="instagram">
-                                    <a href="#" class="insta"><img src="../icons/instagram.svg" alt=""></a>
-                                </li>
-                                <li class="codepen">
-                                    <a href="#"><img src="../icons/linkedin.svg" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card--title">
-                            <h3>jone spot</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <div class="card--desc">
-                            <hr />
-                            <p>“I love BR”</p>
-                        </div>
-                        <div class="card--btn">
-                            <a class="test" href="./showResume.html">
-                                
-                                See full
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div data-aos="fade-down">
-            <div class="wrap">
-
-                <div class="card">
-                    <div class="card-liner">
-                        <figure>
-                            <img src="../img/fakeProf/fakeprof2.jpeg" alt="" />
-                        </figure>
-                        <div class="card--social">
-                            <ul>
-                                <li class="instagram">
-                                    <a href="#" class="insta"><img src="../icons/instagram.svg" alt=""></a>
-                                </li>
-                                <li class="codepen">
-                                    <a href="#"><img src="../icons/linkedin.svg" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card--title">
-                            <h3>jone spot</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <div class="card--desc">
-                            <hr />
-                            <p>“I love BR”</p>
-                        </div>
-                        <div class="card--btn">
-                            <a class="test" href="./showResume.html">
-                                
-                                See full
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div data-aos="fade-left">
-            <div class="wrap">
-
-                <div class="card">
-                    <div class="card-liner">
-                        <figure>
-                            <img src="../img/fakeProf/fakeProf1.jpeg" alt="" />
-                        </figure>
-                        <div class="card--social">
-                            <ul>
-                                <li class="instagram">
-                                    <a href="#" class="insta"><img src="../icons/instagram.svg" alt=""></a>
-                                </li>
-                                <li class="codepen">
-                                    <a href="#"><img src="../icons/linkedin.svg" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card--title">
-                            <h3>jone spot</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <div class="card--desc">
-                            <hr />
-                            <p>“I love BR”</p>
-                        </div>
-                        <div class="card--btn">
-                            <a class="test" href="./showResume.html">
-                                
-                                See full
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div> -->
+   
     </div>
 
     <div class="all">
-        <!-- <div data-aos="fade-right">
-            <div class="wrap">
-
-                <div class="card">
-                    <div class="card-liner">
-                        <figure>
-                            <img src="../img/fakeProf/fakeProf1.jpeg" alt="" />
-                        </figure>
-                        <div class="card--social">
-                            <ul>
-                                <li class="instagram">
-                                    <a href="#" class="insta"><img src="../icons/instagram.svg" alt=""></a>
-                                </li>
-                                <li class="codepen">
-                                    <a href="#"><img src="../icons/linkedin.svg" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card--title">
-                            <h3>jone spot</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <div class="card--desc">
-                            <hr />
-                            <p>“I love BR”</p>
-                        </div>
-                        <div class="card--btn">
-                            <a class="test" href="./showResume.html">
-                                
-                                See full
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div data-aos="fade-down">
-            <div class="wrap">
-
-                <div class="card">
-                    <div class="card-liner">
-                        <figure>
-                            <img src="../img/fakeProf/fakeprof2.jpeg" alt="" />
-                        </figure>
-                        <div class="card--social">
-                            <ul>
-                                <li class="instagram">
-                                    <a href="#" class="insta"><img src="../icons/instagram.svg" alt=""></a>
-                                </li>
-                                <li class="codepen">
-                                    <a href="#"><img src="../icons/linkedin.svg" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card--title">
-                            <h3>jone spot</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <div class="card--desc">
-                            <hr />
-                            <p>“I love BR”</p>
-                        </div>
-                        <div class="card--btn">
-                            <a class="test" href="./showResume.html">
-                                
-                                See full
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div data-aos="fade-left">
-            <div class="wrap">
-
-                <div class="card">
-                    <div class="card-liner">
-                        <figure>
-                            <img src="../img/fakeProf/fakeprof3.jpeg" alt="" />
-                        </figure>
-                        <div class="card--social">
-                            <ul>
-                                <li class="instagram">
-                                    <a href="#" class="insta"><img src="../icons/instagram.svg" alt=""></a>
-                                </li>
-                                <li class="codepen">
-                                    <a href="#"><img src="../icons/linkedin.svg" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card--title">
-                            <h3>jone spot</h3>
-                            <p>Web Developer</p>
-                        </div>
-                        <div class="card--desc">
-                            <hr />
-                            <p>“I love BR”</p>
-                        </div>
-                        <div class="card--btn">
-                            <a class="test" href="./showResume.html">
-                                
-                                See full
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div> -->
+    
     </div>
 
 
@@ -481,6 +52,7 @@
 
     <script src="../animation/aos/dist/aos.js"></script>
     <script src="../scripts/jq.js"></script>
+    <script src="../animation/materialize/js/materialize.min.js"></script>
     <script src="../scripts/allResumes.js"></script>
     <script>
         AOS.init();

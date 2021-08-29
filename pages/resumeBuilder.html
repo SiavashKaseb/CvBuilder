@@ -17,13 +17,18 @@
             <input type="checkbox" id="check">
             <nav class="menu">
                 <label for="check" id="check">
-                <img src="../images/grid.svg" alt="menu">
+                <img src="../images/hamburger.svg" alt="menu">
             </label>
                 <ul>
-                    <li id="nav-icon1"><img src="../images/home-alt.svg" alt=""></li>
-                    <li id="nav-icon2"><img src="../images/feed.svg" alt="menu"></li>
-                    <li id="nav-icon3"><img src="../images/hamburger.svg" alt=""></li>
-
+                    <a href="./index.html">
+                        <li id="nav-icon1"><img src="../images/home-alt.svg" alt=""></li>
+                    </a>
+                    <a href="./Dashboard.html">
+                        <li id="nav-icon2"><img src="../images/feed.svg" alt="menu"></li>
+                    </a>
+                    <a href="./allResumes.html">
+                        <li id="nav-icon3"><img src="../images/grid.svg" alt=""></li>
+                    </a>
                 </ul>
         </div>
         <img src="../images/pic-make.png" alt="" class="pic-make">
@@ -37,10 +42,9 @@
 
 
         <span id="btn1">
-            <img src="../images/chevrons-left.svg" alt="">
+            prev
         </span>
-        <span id="btn">
-            <img src="../images/chevrons-right.svg">
+        <span id="btn">next
         </span>
 
         <div class="popup" data-tilt data-tilt-glare data-tilt-max-glare="0.8" id="popup">
@@ -55,14 +59,26 @@
             <div class="slides">
                 <div class="slide first" id="first">
                     <div>
-                        <label for="age">Age : </label>
-                        <input type="date" id="age" name="age" placeholder="age">
-                        <label for="city">City : </label>
-                        <input type="text" id="city" name="city" placeholder="city">
-                        <label for="phone"><span class="red">*</span> Phone number : </label>
-                        <input type="tel" id="phone" name="phone" placeholder="phone number">
-                        <label for="about" class="next-col">About me : </label>
-                        <textarea id="about" name="about" placeholder="About me" rows="8" cols="8"></textarea>
+                        <div class="sub-slide">
+                            <label for="age">Age : </label>
+                            <input type="date" id="age" name="age" placeholder="age">
+                            <label for="city">City : </label>
+                            <input type="text" id="city" name="city" placeholder="city">
+                            <label for="phone"><span class="red">*</span> Phone number : </label>
+                            <input type="tel" id="phone" name="phone" placeholder="phone number">
+                            <label for="sex"><span class="red">*</span> Sex : </label>
+
+                            <select id="sex">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+
+
+                        </div>
+                        <div class="sub-slide">
+                            <label for="about" class="next-col">About me : </label>
+                            <textarea id="about" name="about" placeholder="About me" rows="8" cols="16"></textarea>
+                        </div>
                     </div>
                 </div>
                 <div class="slide" id="second">
@@ -77,26 +93,28 @@
                 </div>
                 <div class="slide" id="third">
                     <div>
-                        <label for="title"><span class="red">*</span> Job title : </label>
-                        <input type="text" id="title" name="title" placeholder="job title">
-                        <label for="position">Job position : </label>
-                        <input type="text" id="position" name="position" placeholder="job position">
-                        <label for="workplace">Workplace name : </label>
-                        <input type="text" id="workplace" name="workplace" placeholder="workplace name">
-                        <label for="status" class="next-col"><span class="red">*</span> Occupational status : </label>
-                        <div>
-                            <input type="radio" id="status1" name="status" value="status1" checked="checked">   <label for="status1" class="radio-label">Unemployed</label><br>
+                        <div class="sub-slide">
+                            <label for="title"><span class="red">*</span> Job title : </label>
+                            <input type="text" id="title" name="title" placeholder="job title">
+                            <label for="position">Job position : </label>
+                            <input type="text" id="position" name="position" placeholder="job position">
+                            <label for="workplace">Workplace name : </label>
+                            <input type="text" id="workplace" name="workplace" placeholder="workplace name">
                         </div>
-                        <div>
-                            <input type="radio" id="status2" name="status" value="status2">   <label for="status2" class="radio-label">Job seeker</label><br>
+                        <div class="sub-slide">
+                            <label for="status" class="next-col"><span class="red">*</span> Occupational status : </label>
+                            <div class="occupational-status">
+                                <div>
+                                    <input type="radio" id="status1" name="status" value="status1" checked="checked">   <label for="status1" class="radio-label">Unemployed</label><br>
+                                </div>
+                                <div>
+                                    <input type="radio" id="status2" name="status" value="status2">   <label for="status2" class="radio-label">Job seeker</label><br>
+                                </div>
+                                <div>
+                                    <input type="radio" id="status3" name="status" value="status3">   <label for="status3" class="radio-label">Employed</label><br>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <input type="radio" id="status3" name="status" value="status3">   <label for="status3" class="radio-label">Employed</label><br>
-                        </div>
-                        <!-- <label for="about-job">About my job : </label>
-                        <textarea id="about-job" name="about-job" placeholder="About my job :" rows="3" cols="8"></textarea> -->
-
-
                     </div>
                 </div>
                 <div class="slide" id="fourth">
@@ -125,11 +143,6 @@
                                 <input type="button" onclick="make()" value="submit" id="submit" name="submit">
                             </ul>
                         </div>
-                        <!-- <label for="about-projects" class="next-col">About my projects : </label>
-                        <textarea id="about-projects" name="about-projects" placeholder="About my projects " rows="8" cols="8"></textarea> -->
-
-
-
                     </div>
                 </div>
             </div>

@@ -6,6 +6,20 @@
 
 // document.getElementById("menu-icon").addEventListener("mouseenter", func);
 
+function zad() {
+  $(document).ready(function () {
+    $(".sidenav").sidenav();
+  })
+
+}
+
+
+
+// $(document).ready(function () {
+//   $(".sidenav").sidenav();
+// })
+
+
 function func() {
   document.getElementById("navbar").style.left = "-110vh";
   document.getElementById("icons").className += " fade-in";
@@ -18,14 +32,14 @@ function func2() {
 
 let box = document.getElementById("allCard");
 
-function cardMaker(name, about , b) {
+function cardMaker(name, about, b, icon) {
   let CardModel = `<div data-aos="fade-right">
 <div class="wrap">
 
     <div id="${b}" class="card">
         <div class="card-liner">
             <figure>
-                <img src="../img/fakeProf/fakeProf1.jpeg" alt="" />
+                <img src=${icon} alt="" />
             </figure>
             <div class="card--social">
                 <ul>
@@ -60,6 +74,9 @@ function cardMaker(name, about , b) {
   box.innerHTML += CardModel;
 }
 
+
+
+
 $.ajax({
   type: "GET",
   url: "https://cors-anywhere.herokuapp.com/http://162.55.12.72:3002/allresume",
@@ -69,23 +86,70 @@ $.ajax({
   },
   success: function (response) {
     for (let i = 0; i < response.length; i++) {
+      response[1].Sex = "female"
       if (response[i].AboutProgrammer !== undefined) {
-        cardMaker(response[i].Name, response[i].AboutProgrammer , i);
+        if (response[i].Sex == "male") {
+          cardMaker(
+            response[i].Name,
+            response[i].AboutProgrammer,
+            i,
+            "../img/fakeProf/profAll2.jpeg"
+          );
+        } else if (response[i].Sex == "female") {
+          cardMaker(
+            response[i].Name,
+            response[i].AboutProgrammer,
+            i,
+            "../img/fakeProf/profAll1.jpeg"
+          );
+        } 
+       else {
+          cardMaker(
+            response[i].Name,
+            response[i].AboutProgrammer,
+            i,
+            "../img/fakeProf/profAll3.jpeg"
+          );  
+        
+        }
       } else {
-        cardMaker(response[i].Name, "About is not entered by the user." , i);
+        if (response[i].Sex == "male") {
+          cardMaker(
+            response[i].Name,
+            "About is not entered by the user.",
+            i,
+            "../img/fakeProf/profAll2.jpeg"
+          );
+        } else if (response[i].Sex == "female") {
+          cardMaker(
+            response[i].Name,
+            "About is not entered by the user.",
+            i,
+            "../img/fakeProf/profAll1.jpeg"
+          );
+        } 
+       else {
+          cardMaker(
+            response[i].Name,
+            "About is not entered by the user.",
+            i,
+            "../img/fakeProf/profAll3.jpeg"
+          );  
+        
+        }
       }
-      }
+    }
 
-      $( ".card" ).click(function() {
-            window.localStorage.setItem("User_Name", response[this.id].Name);
-          console.log(response[this.id].Name)
-          window.location.replace("../pages/showResume.html");
-      });
-      
+    $(".card").click(function () {
+      window.localStorage.setItem("User_Name", response[this.id].Name);
+      console.log(response[this.id].Name);
+      window.location.replace("../pages/showResume.html");
+    });
+
     console.log(response);
   },
-  error: function (xhr, ajaxOptions, thrownError) {
-    alert("dobare load beshe");
+  error: function (xhr, ajaxOptions, thrownError) { 
+    console.log(xhr, ajaxOptions, thrownError);
     console.log(localStorage.getItem("access_token"));
   },
 });

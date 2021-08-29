@@ -6,89 +6,176 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/Dashboard.css">
-    <title>Dashboard</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" href="../images/logo.png">
+    <title>Dashboard</title>
+    
 </head>
 
-<body id="bod" onload="SetTime()">
-
-    <div id="allDasboard" class="allDasboard">
-        <div class="icons-link">
-            <a class="icons " href="./index.html">
-                <img src="../icons/home-alt.svg" alt="">
-            </a>
-            <a class="icons" href="#">
-                <img src="../icons/person.svg" alt="">
-            </a>
-            <a class="icons" href="#">
-                <img width="30px" src="../icons/instagram.svg" alt="">
-            </a>
-            <a class="icons" href="#">
-                <img width="30px" src="../icons/linkedin.svg" alt="">
-            </a>
-            <a id="dark" onclick="toggle_light_mode()" class="icons darkMode" href="#">
-                <img id="eys" width="30px" src="../icons/eye.svg" alt="">
-            </a>
-
-
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+          <span class="logo_name">Resumesy</span>
         </div>
-        <div id="glass" class="glass">
-            <h1 class="headText">Dashboard</h1>
-            <div class="box-link">
-                <a class="Box-icnos" href="../pages/resumeBuilder.html">
-                    <div class="Box-icnos1">
-                        <img src="../icons/edit.svg" alt="">
-                        <p>you can make new CV</p>
-                    </div>
+          <ul class="nav-links">
+            <li>
+              <a href="#" class="active">
+                <i class='bx bxs-dashboard' ></i>
+                <span class="links_name">Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="./index.html">
+                <i class='bx bx-home' ></i>
+                <span class="links_name">Home</span>
+              </a>
+            </li>
+            <li>
+                <a href="./resumeBuilder.html">
+                    <i class='bx bx-edit-alt' ></i>
+                  <span class="links_name">Make CV</span>
                 </a>
-                <a class="Box-icnos" href="../pages/allResumes.html">
-                    <div class="Box-icnos1">
-                        <img src="../icons/book-opened.svg" alt="">
-                        <p>you can see all CV</p>
-                    </div>
+              </li>
+    
+            <li>
+              <a href="./allResumes.html">
+                <i class='bx bx-book-reader'></i>
+                <span class="links_name">All Resumes</span>
+              </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxl-linkedin' ></i>
+                  <span class="links_name">Linkedin</span>
                 </a>
-                <div id="time" data-tilt data-tilt-max="50" data-tilt-speed="400" data-tilt-perspective="500">
-
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxl-instagram' ></i>
+                  <span class="links_name">Instagram</span>
+                </a>
+            </li>
+            
+      </div>
+      <section class="home-section">
+        <nav>
+          <div class="sidebar-button">
+            <i class='bx bx-menu sidebarBtn'></i>
+            <span class="dashboard">Dashboard</span>
+          </div>
+          <div id="profile-details" class="profile-details">
+            <span id="admin_name" class="admin_name"></span>
+            
+          </div>
+        </nav>
+    
+        <div class="home-content">
+            <div class="overview-boxes">
+              
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic"><img src="../icons/edit.svg" alt=""></div>
+                        <div class="indicator">
+                          <span class="text">You can make new CV</span>
+                        </div>
+                    </div>
+              
+              </div>
+              <div class="box">
+                <div class="right-side">
+                  <div class="box-topic"><img src="../icons/book-opened.svg" alt=""></div>
+                  <div class="indicator">
+                    <span class="text">you can see all CV</span>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="aboutProgrammer">
-                <p class="text-about">My Name :</p>
-                <span id="Box-Name"></span>
-                <p class="text-about">About Me :</p>
-                <span id="Box-Name2"></span>
-                <p class="text-about">Phone Number :</p>
-                <span id="Box-Name3"></span>
+    
+              
+    
+              
+          <div class="sales-boxes">
+            <div class="recent-sales box">
+              <div class="title">About</div>
+              <div class="sales-details">
+                <div class="inline">
+                  <span>Name : </span><span id="boxName"></span>
+                  <br>
+                  <span>About : </span><span id="boxAbout"></span>
+                  <br>
+                  <span>Phone : </span><span id="boxPhone"></span>
+                  <br>
+                  <span>Job : </span><span id="boxJob"></span>  
+                </div>
+                
+              </div>
+              <div class="button">
+                <a href="./allResumes.html">See All</a>
+              </div>
             </div>
-
-            <h1 class="headText">You can find a new friend</h1>
-            <div>
-                <div class="boxfind">
-                    <img class="prof" src="../img/fakeProf/fakeProf1.jpeg" alt="fakeProf" width="50px" height="50px">
-                    <p class="textFD">jone</p>
-                    <p class="textFD">front End Developer</p>
-                    <a href="#" class="linkFD">See</a>
-                </div>
-
-                <div class="boxfind">
-                    <img class="prof" src="../img/fakeProf/fakeprof2.jpeg" alt="fakeProf" width="50px" height="50px">
-                    <p class="textFD">Carol</p>
-                    <p class="textFD">Back End Developer</p>
-                    <a href="#" class="linkFD">See</a>
-                </div>
-
-                <div class="boxfind">
-                    <img class="prof" src="../img/fakeProf/fakeprof3.jpeg" alt="fakeProf" width="50px" height="50px">
-                    <p class="textFD">Stella</p>
-                    <p class="textFD">Full stack Developer</p>
-                    <a href="#" class="linkFD">See</a>
-                </div>
+            <div class="top-sales box">
+              <div class="title">Recently registered</div>
+              <ul class="top-sales-details">
+                <li>
+                <a href="#">
+                  <span class="product">jon doe</span>
+                </a>
+                
+              </li>
+              <li>
+                <a href="#">
+                  <span class="product">jon doe</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                 
+                  <span class="product">jon doe</span>
+                </a>
+                
+              </li>
+              <li>
+                <a href="#">
+                  <span class="product">jon doe</span>
+                </a>
+                
+              </li>
+              <li>
+                <a href="#">
+                  <span class="product">jon doe</span>
+                </a>
+                
+              </li>
+              <li>
+                <a href="#">
+                 <span class="product">jon doe</span>
+                </a>
+                
+              <li>
+                <a href="#">
+                  <span class="product">jon doe</span>
+                </a>
+                
+              </li>
+    <li>
+                <a href="#">
+                  <span class="product">jon doe</span>
+                </a>
+              </li>
+              </ul>
             </div>
+          </div>
         </div>
-    </div>
+      </section>
 
+
+
+    
     <script src="../scripts/vanilla-tilt.js"></script>
     <script src="../scripts/jq.js"></script>
     <script src="../scripts/Dashboard.js"></script>
+
+
 </body>
 
 </html>

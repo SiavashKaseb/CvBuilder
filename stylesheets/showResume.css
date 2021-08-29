@@ -23,13 +23,15 @@
     background: linear-gradient(163deg, rgba(89, 215, 180, 1) 35%, rgba(179, 132, 237, 1) 71%);
 }
 
- 
-#nav-login a , #nav-home a , #nav-all a {
-text-decoration: none;
-color: white
+#nav-login a,
+#nav-home a,
+#nav-all a {
+    text-decoration: none;
+    color: white
 }
+
 .partition {
-    width: 25%;
+    width: 33.33333333%;
     height: 50%;
 }
 
@@ -78,12 +80,8 @@ color: white
     text-align: center;
 }
 
-.flip-card-back.purple {
-    background-color: #b384ed;
-}
-
-.flip-card-back.green {
-    background-color: #85d59d;
+.flip-card-back {
+    background-color: white;
 }
 
 .flip-div {
@@ -137,7 +135,7 @@ color: white
 .nav {
     z-index: 3;
     position: absolute;
-    width: 25%;
+    width: 33.3333333%;
     top: 0;
     text-align: center;
     height: 50%;
@@ -158,12 +156,7 @@ color: white
     opacity: 0;
 }
 
-.nav>div:hover {
-    transition: 0.5s;
-    color: gray;
-}
-
-.nav>div:hover .nav-title {
+.nav div:hover .nav-title {
     transform: scale(1.1);
     transition: 0.5s;
 }
@@ -177,79 +170,13 @@ color: white
     background-color: rgba(89, 215, 180, 1);
 }
 
-.rate-partition {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.rate {
-    width: 80%;
-    height: 70%;
-    background: linear-gradient(163deg, rgba(89, 215, 180, 1) 35%, rgba(179, 132, 237, 1) 71%);
-    border-radius: 30px;
-    box-shadow: 0px 0px 15px #000000cc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
-}
-
-.rate:hover {
-    transition: 1s;
-    transform: scale(1.05);
-    font-size: 1.2em;
-}
-
-.rate>span {
-    font-weight: bold;
-}
-
-.emoji {
-    background-image: url(../images/1.png);
-    width: 35%;
-    height: 40%;
-    background-size: 100% 100%;
-}
-
-.stars {
-    width: 70%;
-    height: 15%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.star {
-    height: 100%;
-    width: 15%;
-    background-size: 100% 100%;
-    transition: 0.5s;
-    cursor: pointer;
-}
-
-.star:hover {
-    transform: scale(1.5);
-}
-
-.star1 {
-    background-image: url(../images/sy.png);
-}
-
-.star2,
-.star3,
-.star4,
-.star5 {
-    background-image: url(../images/sb.png);
-}
-
 .clock {
     background: linear-gradient(163deg, rgba(89, 215, 180, 1) 35%, rgba(179, 132, 237, 1) 71%);
     border-radius: 50%;
     border: 5px solid currentColor;
     box-shadow: 0px 0px 15px #000000cc;
-    height: 200px;
-    width: 200px;
+    height: 80%;
+    width: 60%;
     position: relative;
 }
 
@@ -324,139 +251,30 @@ color: white
     z-index: 2;
 }
 
-.share-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media (max-width: 900px) {
+    .partition,
+    .nav {
+        width: 50%;
+        height: 33.333333%;
+    }
+    .clock {
+        width: 50%;
+    }
+    .date {
+        display: none;
+    }
+    .container {
+        font-size: 0.7em;
+    }
 }
 
-.button {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background: #4760f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-}
-
-.bar1,
-.bar2 {
-    width: 50px;
-    height: 7px;
-    background-color: #f3f3f3;
-    transform: translate(-5px, 10px) rotate(25deg);
-    border-radius: 10px;
-    transition: all .3s ease-in-out;
-}
-
-.bar2 {
-    transform: translate(-5px, -7px) rotate(-25deg);
-    position: absolute;
-    transition: all .3s ease-in-out;
-}
-
-.button div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all .3s ease-in-out;
-}
-
-.button div i {
-    font-size: 0;
-    opacity: 0;
-    transition: all .3s ease-in-out;
-}
-
-.telegram,
-.instagram,
-.whatsapp {
-    width: 20px;
-    height: 20px;
-    background-color: #f3f3f3;
-    color: #2d2d2d;
-    border-radius: 50%;
-    position: absolute;
-    transform: translate(15px, -18px);
-    transition: all .3s ease-in-out;
-}
-
-.instagram {
-    transform: translateX(-20px);
-    transition: all .3s ease-in-out;
-}
-
-.whatsapp {
-    transform: translate(15px, 18px);
-    transition: all .3s ease-in-out;
-}
-
-.telegram.exp,
-.instagram.exp,
-.whatsapp.exp {
-    transform: translate(80px, -80px);
-    width: 100px;
-    height: 100px;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
-    transition: all .3s ease-in-out;
-}
-
-.telegram.exp:hover {
-    background-color: #0087cb;
-    transition: all .3s ease-in-out;
-}
-
-.telegram.exp:hover i,
-.instagram.exp:hover i,
-.whatsapp.exp:hover i {
-    color: #f3f3f3;
-    transition: all .3s ease-in-out;
-}
-
-.instagram.exp {
-    transform: translateX(-100px);
-    transition: all .3s ease-in-out;
-}
-
-.instagram.exp:hover {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    transition: all .3s ease-in-out;
-}
-
-.whatsapp.exp {
-    transform: translate(80px, 80px);
-    transition: all .3s ease-in-out;
-}
-
-.whatsapp.exp:hover {
-    background-color: #4dc247;
-    transition: all .3s ease-in-out;
-}
-
-.bar1.exp,
-.bar2.exp {
-    transform: rotate(45deg);
-    width: 30px;
-    height: 5px;
-    transition: all .3s ease-in-out;
-}
-
-.bar2.exp {
-    transform: rotate(-45deg);
-    transition: all .3s ease-in-out;
-}
-
-.button.exp {
-    width: 60px;
-    height: 60px;
-    transition: all .3s ease-in-out;
-}
-
-.button div i.exp {
-    opacity: 1;
-    font-size: 60px;
-    transition: all .3s ease-in-out;
+@media (max-width: 400px) {
+    .container>div:nth-child(4) {
+        display: none;
+    }
+    .partition,
+    .nav {
+        width: 100%;
+        height: 20%;
+    }
 }

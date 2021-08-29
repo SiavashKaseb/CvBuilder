@@ -14,15 +14,21 @@
 </head>
 
 <body>
-    <img  class="menu-icon" src="../images/menu-icon.png" alt="menu" id="menu-icon">
+    <img class="menu-icon" src="../images/menu-icon.png" alt="menu" id="menu-icon">
     <div class="navbar" id="navbar">
     </div>
     <ul id="icons">
-        <a href="../pages/register.html"><li>Sign up</li></a>
-        <a href="../pages/register.html"><li>Log in</li></a>
-        <a href="../pages/allResumes.html"><li>All resumes</li></a>
+        <a href="../pages/register.html">
+            <li>Sign up</li>
+        </a>
+        <a href="../pages/register.html">
+            <li>Log in</li>
+        </a>
+        <a href="../pages/allResumes.html">
+            <li>All resumes</li>
+        </a>
     </ul>
-    
+
     <nav class="navigation-menue"></nav>
     <div class="slider">
         <div class="slides">
@@ -46,11 +52,10 @@
         <div class="about-text" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
             <img src="../images/logo.png" alt="">
             <span>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, expedita. Quisquam, laudantium? Deleniti doloribus sequi exercitationem incidunt vel cumque, quod esse repellendus aspernatur, autem ea blanditiis
-            facilis, error nostrum explicabo.
+                Create your awesome resume and show the world your abilities.
         </span>
         </div>
-        <img src="../images/about-pic (2).png" alt="pic">
+        <img src="../images/about-pic (2).png" alt="pic" class="about-img">
     </div>
     <div class="footer">
         <div class="glide">
@@ -99,6 +104,7 @@
         </div>
 
     </div>
+    <script src="../scripts/jq.js"></script>
     <script src="../scripts/index.js"></script>
     <script type="text/javascript" src="../scripts/vanilla-tilt.js"></script>
     <script src="../scripts/glide.min.js"></script>
@@ -112,8 +118,11 @@
                 1200: {
                     perView: 3,
                 },
-                800: {
+                900: {
                     perView: 2,
+                },
+                750: {
+                    preView: 1,
                 }
             }
         }).mount()
