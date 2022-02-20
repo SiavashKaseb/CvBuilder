@@ -10,7 +10,6 @@ signInbtn.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 });
 
-
 function testbt() {
   let Email = document.getElementById("upEmail");
   let Fname = document.getElementById("upName");
@@ -19,106 +18,167 @@ function testbt() {
   console.log(Password.value);
   if (Password.value == "") {
     Swal.fire({
-      icon: 'error',
-      text : 'Fill the password please!'
-    })
+      icon: "error",
+      text: "Fill the password please!",
+    });
   } else if (Password.value.lenght < 8) {
     Swal.fire({
-      icon: 'error',
-      text : 'Password length must be atleast 8 characters'
-    })
+      icon: "error",
+      text: "Password length must be atleast 8 characters",
+    });
     return false;
   } else if (Password.value.lenght > 15) {
     Swal.fire({
-      icon: 'error',
-      text : 'Password length must be atleast 8 characters'
-    })
+      icon: "error",
+      text: "Password length must be atleast 8 characters",
+    });
   } else {
-    console.log("ok")
+    console.log("ok");
   }
-  $.ajax({
-    type: "POST",
-    url: "https://cors-anywhere.herokuapp.com/http://162.55.12.72:3002/SignUp",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "X-Requested-With",
-    },
-    data: {
-      Name: Fname.value,
-      Email: Email.value,
-      Password: Password.value,
-    },
+  // $.ajax({
+  //   type: "POST",
+  //   url: "https://cors-anywhere.herokuapp.com/http://162.55.12.72:3002/SignUp",
+  //   headers: {
+  //     "Access-Control-Allow-Origin": "*",
+  //     "Access-Control-Allow-Headers": "X-Requested-With",
+  //   },
+  //   data: {
+  //     Name: Fname.value,
+  //     Email: Email.value,
+  //     Password: Password.value,
+  //   },
 
-    success: function (response) {
-      console.log(response.token);
-      Swal.fire({
-        icon: "success",
-        title : "Welcome",
-        text : "Details saved successfully!!!"
-      })
-      window.localStorage.setItem("access_token", response.token);
-      setTimeout(function () {
-        window.location.replace("../pages/Dashboard.html");
-      }, 950)
-    },
-    error: function (xhr, ajaxOptions, thrownError) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: `${xhr} , ${ajaxOptions} , ${thrownError}`,
-        footer: '<a href="../pages/guide.html" style="color:blue;">Why do I have this issue?</a>'
-      }).then(function () {
-        window.location.reload()
-      }) 
-    },
-  });
+  //   success: function (response) {
+  //     console.log(response.token);
+  //     Swal.fire({
+  //       icon: "success",
+  //       title : "Welcome",
+  //       text : "Details saved successfully!!!"
+  //     })
+  //     window.localStorage.setItem("access_token", response.token);
+  //     setTimeout(function () {
+  //       window.location.replace("../pages/Dashboard.html");
+  //     }, 950)
+  //   },
+  //   error: function (xhr, ajaxOptions, thrownError) {
+  //     Swal.fire({
+  //       icon: 'error',
+  //       title: 'Oops...',
+  //       text: `${xhr} , ${ajaxOptions} , ${thrownError}`,
+  //       footer: '<a href="../pages/guide.html" style="color:blue;">Why do I have this issue?</a>'
+  //     }).then(function () {
+  //       window.location.reload()
+  //     })
+  //   },
+
+  fetch("https://api.freerealapi.com/auth/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: Fname.value,
+      email: Email.value,
+      password: Password.value,
+    }),
+  })
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json);
+      // console.log(json.token);
+      if (json.success == true) {
+        Swal.fire({
+          icon: "success",
+          title: "Welcome",
+          text: "Details saved successfully!!!",
+        });
+        window.localStorage.setItem("access_token", json.token);
+        setTimeout(function () {
+          window.location.replace("../pages/Dashboard.html");
+        }, 950);
+      }
+      // window.localStorage.setItem("access_token", response.token);
+      // setTimeout(function () {
+      //   window.location.replace("../pages/Dashboard.html");
+      // }, 950);
+      else if (json.success == false) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${json.status} , ${json.messages.password} , ${json.success}`,
+          footer:
+            '<a href="../pages/guide.html" style="color:blue;">Why do I have this issue?</a>',
+        }).then(function () {
+          window.location.reload();
+        });
+      }
+    });
   event.preventDefault();
 }
-
-
 
 function login() {
   let userName = document.getElementById("UserEmail");
   let Pass = document.getElementById("UserPassword");
   console.log(userName.value, Pass.value);
 
-  $.ajax({
-    type: "POST",
-    url: "https://cors-anywhere.herokuapp.com/http://162.55.12.72:3002/Login",
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "X-Requested-With",
-    },
-    data: {
-      Username: userName.value,
-      Password: Pass.value,
-    },
+  // $.ajax({
+  //   type: "POST",
+  //   url: "https://cors-anywhere.herokuapp.com/http://162.55.12.72:3002/Login",
+  //   headers: {
+  //     "Access-Control-Allow-Origin": "*",
+  //     "Access-Control-Allow-Headers": "X-Requested-With",
+  //   },
+  //   data: {
+  //     Username: userName.value,
+  //     Password: Pass.value,
+  //   },
 
-    success: function (response) {
-      
+  //   success: function (response) {
+
+  //     Swal.fire({
+  //       icon: 'success',
+  //       title: 'Welcome Back',
+  //       text: "You have successfully logged in",
+
+  //     })
+  //     window.localStorage.setItem("access_token", response.token);
+
+  //     setTimeout(function () {
+  //       window.location.replace("../pages/Dashboard.html");
+  //     },950)
+
+  //   },
+  //   error: function (xhr, ajaxOptions, thrownError) {
+  //     Swal.fire({
+  //       icon: 'error',
+  //       title: 'Oops...',
+  //       text: `${xhr} , ${ajaxOptions} , ${thrownError}`,
+  //       footer: '<a href="../pages/guide.html" style="color:blue;">Why do I have this issue?</a>'
+  //     }).then(function () {
+  //       window.location.reload()
+  //     })
+  //   },
+  // });
+
+  fetch("https://api.freerealapi.com/auth/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      email: userName.value,
+      password: Pass.value,
+    }),
+  })
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json);
       Swal.fire({
-        icon: 'success',
-        title: 'Welcome Back',
+        icon: "success",
+        title: "Welcome Back",
         text: "You have successfully logged in",
-       
-      })
-      window.localStorage.setItem("access_token", response.token);
-      
+      });
+      window.localStorage.setItem("access_token", json.token);
       setTimeout(function () {
-        window.location.replace("../pages/Dashboard.html");        
-      },950)
-      
-    },
-    error: function (xhr, ajaxOptions, thrownError) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: `${xhr} , ${ajaxOptions} , ${thrownError}`,
-        footer: '<a href="../pages/guide.html" style="color:blue;">Why do I have this issue?</a>'
-      }).then(function () {
-        window.location.reload()
-      })      
-    },
-  });
+        window.location.replace("../pages/Dashboard.html");
+      }, 950);
+    });
+
   event.preventDefault();
 }
